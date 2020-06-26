@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>利用者</th>
+      <th>メールアドレス</th>
+      <th>予約日</th>
+      <th>利用時間</th>
+      <th>人数</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+　<tbody>
+    <% @room.entries.each do |entry| %>
+      <tr>
+        <td><%= entry.user_name %></td>
+        <td><%= entry.user_email %></td> 
+        <td><%= entry.reserved_date %></td> 
+        <td><%= entry.usage_time %></td> 
+        <td><%= entry.people %></td>
+        <td><% if current_user.email == entry.user_email %>
+            <%= link_to '予約解除', entry, method: :delete, remote: true,
+                data: { confirm: '解除しますか？' },
+                class: "button_cancel" %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

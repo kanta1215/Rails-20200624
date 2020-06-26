@@ -1,0 +1,38 @@
+ja:
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    index: 一覧
+    destroy: 削除
+    cancel: 取り消し
+    new_data: 新規作成
+    login: ログイン
+    logout: ログアウト
+    top: トップ
+    send: OKです
+  word:
+    index: 索引
+    list: 一覧
+    new: 新規
+    register: 登録
+    login: ログイン
+    confirm_ng: 確認 NG
+    confirm_ok: 確認 OK
+  message:
+    welcome: "予約管理へ ようこそ!! "
+    complete: "%{model}完了"
+    cancel_complete: "%{model}解除完了"
+    register_comlete: "%{model}登録完了"
+    delete_complete: "%{model}削除完了"
+    update_complete: "%{model}更新完了"
+    register: "%{model}登録"
+    list: "%{model}一覧"
+    edit: "%{model}編集"
+    cancel: "%{model}解除"
+    cancel_confirm: "%{model}解除しますか? "
+    delete_confirm: "%{model}を削除しますか? "
+    incorrect_name: "が正しくありません"
+    incorrect_number: "は 5 の倍数で指定してください"
+  errors:
+    header: " %{model} の登録で %{count} 件のエラーが発生しました"

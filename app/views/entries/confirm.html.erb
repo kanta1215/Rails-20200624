@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>UserName:</strong>
+  <%= @entry.user_name %>
+</p>
+<p>
+  <strong>UserEmail:</strong>
+  <%= @entry.user_email %>
+</p>
+<p>
+  <strong>ReservedDate:</strong>
+  <%= @entry.reserved_date %>
+</p>
+<p>
+  <strong>UsageTime:</strong>
+  <%= @entry.usage_time %>
+</p>
+<p>
+  <strong>People:</strong>
+  <%= @entry.people %>
+</p>
+
+<%= form_with(model: [@entry.room, @entry], local: true) do |form| %>
+  <%= render "confirm_detail", conf_button: "確認OK", form: form %>
+<% end %>
+<%= form_with(model: [@entry.room, @entry], local: true, url: confirm_back_room_entries_path) do |form| %>
+  <%= render "confirm_detail", conf_button: "確認NG", form: form %>
+<% end %>

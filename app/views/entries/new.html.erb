@@ -1,0 +1,41 @@
+<h1>新規予約</h1>
+<%= form_with(model: @entry, local: true, url: confirm_room_entries_path) do |form| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@entry.errors.count, "error")%>
+        prohibited this entry from being saved:
+      </h2>
+      <ul>
+      <% @entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= current_user.name %>
+    <%= form.hidden_field :user_name %>
+  </div>
+  <div class="field">
+    <%= current_user.email %>
+    <%= form.hidden_field :user_email %>
+  </div>  
+  <div class="field">
+    <%= form.label :reserved_date %>
+    <%= form.date_field :reserved_date %>
+  </div>  
+  <div class="field">
+    <%= form.label :usage_time %>
+    <%= form.text_field :usage_time %>
+  </div>  
+  <div class="field">
+    <%= form.label :people %>
+    <%= form.number_field :people %>
+  </div>
+
+  <%= form.hidden_field :room_id %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
