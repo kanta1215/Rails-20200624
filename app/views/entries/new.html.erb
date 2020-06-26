@@ -15,11 +15,11 @@
   <% end %>
   <div class="field">
     <%= current_user.name %>
-    <%= form.hidden_field :user_name %>
+    <%#= form.hidden_field :user_name %>
   </div>
   <div class="field">
     <%= current_user.email %>
-    <%= form.hidden_field :user_email %>
+    <%#= form.hidden_field :user_email %>
   </div>  
   <div class="field">
     <%= form.label :reserved_date %>
@@ -35,6 +35,7 @@
   </div>
 
   <%= form.hidden_field :room_id %>
+  <%= form.hidden_field :user_id %>
   <div class="actions">
     <%= form.submit %>
   </div>

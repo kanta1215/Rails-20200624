@@ -1,7 +1,8 @@
 class Entry < ApplicationRecord
-  belongs_to :room 
+  belongs_to :room
+  belongs_to :user 
 
-  validates :user_name, :user_email, :reserved_date,
+  validates :reserved_date,
             :usage_time, :people, presence: true
 
    scope :least_entries,->(base_date) {

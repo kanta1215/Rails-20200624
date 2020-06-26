@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :entries
   before_save :encrypting
 
   validates :name, :email, :password, presence: true

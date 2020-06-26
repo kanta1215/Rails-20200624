@@ -7,8 +7,7 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @entry = Entry.new(room_id: params[:room_id],
-                       user_name: current_user.name, user_email: current_user.email)
+    @entry = Entry.new(room_id: params[:room_id])
   end
 
   def create
@@ -24,9 +23,13 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry.destroy
-    respond_to do |format|
-      format.js { head :no_content }
+    if current_user == @entry.user
+      @entry.destroy
+      respond_to do |format|
+        format.js { head :no_content }
+      end
+    else
+      redirect_to root_path
     end
   end
 
@@ -44,15 +47,15 @@ class EntriesController < ApplicationController
 
   private
     def set_entry
-      @entry = Entry.find(params[:id])
+      @entry = current_user.entries.find(params[:id])
     end
     
     def entry_params
-      params.require(:entry).permit(:user_name, :user_email, :reserved_date,:usage_time,
+      params.require(:entry).permit(:reserved_date,:usage_time,
                                     :room_id, :people, :user_id)
     end
 
     def set_entry_params
-      @entry = Entry.new(entry_params)
+      @entry = current_user.entries.new(entry_params)
     end
 end
