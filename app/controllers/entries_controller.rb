@@ -24,14 +24,9 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(email: @entry.user_email)
-    if current_user == @entry.user
-      @entry.destroy
-      respond_to do |format|
-        format.js { head :no_content }
-      end
-    else
-      redirect_to root_path
+    @entry.destroy
+    respond_to do |format|
+      format.js { head :no_content }
     end
   end
 
