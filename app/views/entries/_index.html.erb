@@ -19,8 +19,8 @@
         <td><%= entry.usage_time %></td> 
         <td><%= entry.people %></td>
         <td><% if current_user == entry.user %>
-            <%= link_to '予約解除', entry, method: :delete, remote: true,
-                data: { confirm: '解除しますか？' },
+            <%= link_to t('button.cancel'), entry, method: :delete, remote: true,
+                data: { confirm: t('message.cancel_confirm', model: Entry.model_name.human) },
                 class: "button_cancel" %>
         <% end %>
         </td>

@@ -15,6 +15,10 @@ ja:
         reserved_date: 予約日
         usage_time: 利用時間
         people: 人数
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
   activemodel:
     models:
       auth: 権限

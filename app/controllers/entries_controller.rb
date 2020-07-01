@@ -15,7 +15,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry.room, notice: '予約完了'}
+        format.html { redirect_to @entry.room,
+                        notice: t('message.register_complete', model: Entry.model_name.human) }
       else
         format.html {render :new}
       end

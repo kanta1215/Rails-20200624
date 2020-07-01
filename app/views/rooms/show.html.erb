@@ -6,25 +6,25 @@
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong><%= Room.human_attribute_name('place') %>:</strong>
   <%= @room.place %>
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong><%= Room.human_attribute_name('number') %>:</strong>
   <%= @room.number %>
 </p>
 
 <% if current_user.admin %>
-<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to t('button.edit'), edit_room_path(@room) %> |
 <% end %>
-<%= link_to 'Back', rooms_path %>
+<%= link_to t('button.back'), rooms_path %>
 
 <p>
-  <%= link_to '予約登録', new_room_entry_path(room_id: @room.id) %>
+  <%= link_to t('word.register'), new_room_entry_path(room_id: @room.id) %>
 </p>
 
 <p>
-  <strong>予約一覧</strong>
+  <strong><%= t('message.list', model: Entry.model_name.human) %></strong>
   <%= render "entries/index" %>
 </p>

@@ -23,7 +23,7 @@ ja:
     welcome: "予約管理へ ようこそ!! "
     complete: "%{model}完了"
     cancel_complete: "%{model}解除完了"
-    register_comlete: "%{model}登録完了"
+    register_complete: "%{model}登録完了"
     delete_complete: "%{model}削除完了"
     update_complete: "%{model}更新完了"
     register: "%{model}登録"

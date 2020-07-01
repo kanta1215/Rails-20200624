@@ -21,8 +21,8 @@
 </p>
 
 <%= form_with(model: [@entry.room, @entry], local: true) do |form| %>
-  <%= render "confirm_detail", conf_button: "確認OK", form: form %>
+  <%= render "confirm_detail", conf_button: t('word.confirm_ok'), form: form %>
 <% end %>
 <%= form_with(model: [@entry.room, @entry], local: true, url: confirm_back_room_entries_path) do |form| %>
-  <%= render "confirm_detail", conf_button: "確認NG", form: form %>
+  <%= render "confirm_detail", conf_button: t('word.confirm_ng'), form: form %>
 <% end %>

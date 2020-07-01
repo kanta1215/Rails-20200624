@@ -1,6 +1,6 @@
-<h1>Editing Room</h1>
+<h1><%= t('messaage.edit', model: Room.model_name.human) %></h1>
 
 <%= render 'form', room: @room %>
 
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to t('button.show'), @room %> |
+<%= link_to t('button.edit'), rooms_path %>

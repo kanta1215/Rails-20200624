@@ -1,4 +1,4 @@
-<h1>新規予約</h1>
+<h1><%= t('message.register', model: Entry.model_name.human) %></h1>
 <%= form_with(model: @entry, local: true, url: confirm_room_entries_path) do |form| %>
   <% if @entry.errors.any? %>
     <div id="error_explanation">
@@ -37,6 +37,6 @@
   <%= form.hidden_field :room_id %>
   <%= form.hidden_field :user_id %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('word.register') %>
   </div>
 <% end %>

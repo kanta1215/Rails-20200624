@@ -1,6 +1,6 @@
-<h1>Editing User</h1>
+<h1><%= t('message.edit', model: Usesr.model_name.human) %></h1>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('button.show'), @user %> |
+<%= link_to t('button.back'), users_path %>
